@@ -6,10 +6,7 @@ def has_digit(str):
 
 
 def is_long(str):
-    if len(str) >= 12:
-        return True
-    else:
-        return False
+    return len(str) >= 12
 
 
 def has_letters(str):
@@ -46,11 +43,12 @@ def grade_pass(str):
     return score
 
 
-def main():
-    def validate(str):
-        label["text"] = f"Рейтинг вашего пароля: {grade_pass(str)}"
-        return True
+def validate(str):
+    label ["text"] = f"Рейтинг вашего пароля: {grade_pass(str)}"
+    return True
 
+
+def main():
     root = Tk()
     root.title("Оценка пароля")
     root.geometry("300x80")
@@ -58,7 +56,7 @@ def main():
     check = (root.register(validate), "%P")
     field_pass = Entry(validate="key", validatecommand=check)
     field_pass.pack(anchor=N, padx=8, pady=8)
-
+    global label
     label = Label(text="Рейтинг вашего пароля: 0")
     label.pack()
 
