@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 def has_digit(str):
     return any(symbol.isdigit() for symbol in str)
 
@@ -54,7 +53,7 @@ def main():
     root.geometry("300x80")
 
     check = (root.register(validate), "%P")
-    field_pass = Entry(validate="key", validatecommand=check)
+    field_pass = Entry(validate="key", validatecommand=check, show="*")
     field_pass.pack(anchor=N, padx=8, pady=8)
     global label
     label = Label(text="Рейтинг вашего пароля: 0")
